@@ -65,8 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 
-# Install requirements
-RUN pip3 install -U -r requirements.txt
+
 
 
 # start the bot
