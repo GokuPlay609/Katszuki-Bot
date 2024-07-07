@@ -64,14 +64,6 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Maxrobot
-RUN git clone https://github.com/maxsupun/Max-Robot /root/Maxrobot
-WORKDIR /root/Maxrobot
-
-#Copy config file to /root/Maxrobot/Maxrobot
-COPY ./Maxrobot/sample_config.py ./Maxrobot/config.py* /root/Maxrobot/Maxrobot/
-
-ENV PATH="/home/bot/bin:$PATH"
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt
